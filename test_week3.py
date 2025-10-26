@@ -344,6 +344,19 @@ class TestBSTMax(unittest.TestCase):
         root.left.left = BST(3)
         self.assertEqual(week3.bst_max(root), 8)
 
+class TestGetNeighbors(unittest.TestCase):
+    graph = {
+        1: [2, 3],
+        2: [1, 4],
+        3: [1, 4],
+        4: [2, 3]
+    }
+    def test_get_neighbors(self):
+        self.assertListEqual(week3.get_neighbors(self.graph, 1), [2, 3])
+
+    def test_get_neighbors_nonexistent_node(self):
+        self.assertListEqual(week3.get_neighbors(self.graph, 5), [])
+
 
 class TestBFS(unittest.TestCase):
     graph = {
@@ -352,6 +365,7 @@ class TestBFS(unittest.TestCase):
         3: [1, 4],
         4: [2, 3]
     }
+
     def test_bfs(self):
         self.assertListEqual(week3.bfs(self.graph, 1), [1, 2, 3, 4])
 
