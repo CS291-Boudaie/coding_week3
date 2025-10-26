@@ -180,6 +180,18 @@ jobs:
           timeout: 10
           max-score: 10
 
+      # Test Neighbors
+      - name: Test Neighbors
+        id: test-neighbors
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Test Neighbors
+          setup-command: >
+            echo "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" | base64 -d | gzip -d > test_real.py
+          command: python -m unittest test_real.TestGetNeighbors
+          timeout: 5
+          max-score: 5
+
       # Test BFS
       - name: Test BFS
         id: test-bfs
@@ -234,6 +246,7 @@ jobs:
           TEST-INSERT-BST_RESULTS: "${{steps.test-insert-bst.outputs.result}}"
           TEST-BST-MIN_RESULTS: "${{steps.test-bst-min.outputs.result}}"
           TEST-BST-MAX_RESULTS: "${{steps.test-bst-max.outputs.result}}"
+          TEST-NEIGHBORS_RESULTS: "${{steps.test-neighbors.outputs.result}}"
           TEST-BFS_RESULTS: "${{steps.test-bfs.outputs.result}}"
           TEST-PATH-EXISTS_RESULTS: "${{steps.test-path-exists.outputs.result}}"
           TEST-SHORTEST-PATH_RESULTS: "${{steps.test-shortest-path.outputs.result}}"
@@ -253,6 +266,7 @@ jobs:
             test-insert-bst,
             test-bst-min,
             test-bst-max,
+            test-neighbors,
             test-bfs,
             test-path-exists,
             test-shortest-path
