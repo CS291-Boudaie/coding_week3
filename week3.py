@@ -193,6 +193,18 @@ def bfs(graph, start):
     return []
 
 
+def path_exists(graph, start, end):
+
+    """
+    Given a graph, a starting node, and an ending node, return True if there is a path from the starting node to the ending node.
+    Otherwise, return False.
+    Hint: You can use your BFS function from above to solve this problem. If you reach the end node from start, you return True.
+    You can also challenge yourself and do DFS here
+    Hint 2: If the queue is ever empty and you have not reached the end node, there's no path.
+    """
+    return False
+
+
 def shortest_path(graph, start, end):
     """
     Given a graph, a starting node, and an ending node, return the shortest path from the starting node to the ending node.
